@@ -1,26 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import CountUp from 'react-countup';
 
+import './Cards.css';
+import { Bounce } from 'react-reveal';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles({
-
-    root: {
-        minWidth: 275,
-    },
-  
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
-    
-});
 
 
 const Cards = () => {
@@ -41,61 +25,83 @@ const Cards = () => {
             setRecovered(res.data.data.summary.recovered);
 
         }
-
         getData();
     });
 
-    // .catch(err => {
-    //     console.log(err)
-    // })
 
-    const classes = useStyles();
-    
+
 
     return (
-        <>
 
-            <div>
-                <h1>COVID TRACKER</h1>
+<>
+
+            <div className="main-container">
+                <div className="heading-container">
+                    <h1 className="heading">COVID TRACKER</h1>
+                    <p className="credit">Develop by UMAIR SADIQ</p>
+                </div>
             </div>
 
 
-            <Card className={classes.root} variant="outlined">
+                <div className="card-container">
+                    <div className="card card-1">
+                        <div className="card__icon"><i className="fas fa-bolt"></i></div>
+                        <p className="card__exit"><i className="fas fa-times"></i></p>
+                        <h2 className="card__title">Total Cases</h2>
+                        <p className="card__apply">
+                            <Bounce top>
+                                <CountUp start={0} end={totalcases} delay={3}>
+                                    {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
+                                </CountUp>
+                            </Bounce>
+                        </p>
+                    </div>
+                </div>
 
-                <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        Total Cases
-        </Typography>
-                    <Typography variant="h5" component="h2">
-                        {totalcases}
-                    </Typography>
-                </CardContent>
+                <div className="card-container">
+                    <div className="card card-2">
+                        <div className="card__icon"><i className="fas fa-bolt"></i></div>
+                        <p className="card__exit"><i className="fas fa-times"></i></p>
+                        <h2 className="card__title">Active Cases</h2>
+                        <p className="card__apply">
+                            <Bounce top>
+                                <CountUp start={0} end={activecases} delay={3}>
+                                    {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
+                                </CountUp>
+                            </Bounce>
+                        </p>
+                    </div>
+                </div>
 
-                <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        Active Cases
-        </Typography>
-                    <Typography variant="h5" component="h2">
-                        {activecases}
-                    </Typography>
-                </CardContent>
+                <div className="card-container">
+                    <div className="card card-3">
+                        <div className="card__icon"><i className="fas fa-bolt"></i></div>
+                        <p className="card__exit"><i className="fas fa-times"></i></p>
+                        <h2 className="card__title">Death</h2>
+                        <p className="card__apply">
+                            <Bounce top>
+                                <CountUp start={0} end={deaths} delay={3}>
+                                    {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
+                                </CountUp>
+                            </Bounce>
+                        </p>
+                    </div>
+                </div>
 
-                <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        Deaths
-        </Typography>
-                    <Typography variant="h5" component="h2">
-                        {deaths}
-                    </Typography>
-                </CardContent>
-
-                <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom> Recovered   </Typography>
-
-                    <Typography variant="h5" component="h2"> {recovered}     </Typography>
-                </CardContent>
-
-            </Card>
+                <div className="card-container">
+                    <div className="card card-4">
+                        <div className="card__icon"><i className="fas fa-bolt"></i></div>
+                        <p className="card__exit"><i className="fas fa-times"></i></p>
+                        <h2 className="card__title">recovered</h2>
+                        <p className="card__apply">
+                            <Bounce top>
+                                <CountUp start={0} end={recovered} delay={3}>
+                                    {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
+                                </CountUp>
+                            </Bounce>
+                        </p>
+                    </div>
+                </div>
 
         </>
     )
