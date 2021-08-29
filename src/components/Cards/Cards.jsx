@@ -28,12 +28,9 @@ const Cards = () => {
         getData();
     });
 
-
-
-
     return (
 
-<>
+        <>
 
             <div className="main-container">
                 <div className="heading-container">
@@ -43,65 +40,65 @@ const Cards = () => {
             </div>
 
 
-                <div className="card-container">
-                    <div className="card card-1">
-                        <div className="card__icon"><i className="fas fa-bolt"></i></div>
-                        <p className="card__exit"><i className="fas fa-times"></i></p>
-                        <h2 className="card__title">Total Cases</h2>
-                        <p className="card__apply">
-                            <Bounce top>
-                                <CountUp start={0} end={totalcases} delay={3}>
-                                    {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
-                                </CountUp>
-                            </Bounce>
-                        </p>
-                    </div>
+            <div className="card-container">
+                <div className="card card-1">
+                    <div className="card__icon"><i className="fas fa-bolt"></i></div>
+                    <p className="card__exit"><i className="fas fa-times"></i></p>
+                    <h2 className="card__title">Total Cases</h2>
+                    <p className="card__apply">
+                        <Bounce top>
+                            <CountUp start={0} end={totalcases} delay={3}>
+                                {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
+                            </CountUp>
+                        </Bounce>
+                    </p>
                 </div>
+            </div>
 
-                <div className="card-container">
-                    <div className="card card-2">
-                        <div className="card__icon"><i className="fas fa-bolt"></i></div>
-                        <p className="card__exit"><i className="fas fa-times"></i></p>
-                        <h2 className="card__title">Active Cases</h2>
-                        <p className="card__apply">
-                            <Bounce top>
-                                <CountUp start={0} end={activecases} delay={3}>
-                                    {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
-                                </CountUp>
-                            </Bounce>
-                        </p>
-                    </div>
+            <div className="card-container">
+                <div className="card card-2">
+                    <div className="card__icon"><i className="fas fa-bolt"></i></div>
+                    <p className="card__exit"><i className="fas fa-times"></i></p>
+                    <h2 className="card__title">Active Cases</h2>
+                    <p className="card__apply">
+                        <Bounce top>
+                            <CountUp start={0} end={activecases} delay={3}>
+                                {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
+                            </CountUp>
+                        </Bounce>
+                    </p>
                 </div>
+            </div>
 
-                <div className="card-container">
-                    <div className="card card-3">
-                        <div className="card__icon"><i className="fas fa-bolt"></i></div>
-                        <p className="card__exit"><i className="fas fa-times"></i></p>
-                        <h2 className="card__title">Death</h2>
-                        <p className="card__apply">
-                            <Bounce top>
-                                <CountUp start={0} end={deaths} delay={3}>
-                                    {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
-                                </CountUp>
-                            </Bounce>
-                        </p>
-                    </div>
+            <div className="card-container">
+                <div className="card card-3">
+                    <div className="card__icon"><i className="fas fa-bolt"></i></div>
+                    <p className="card__exit"><i className="fas fa-times"></i></p>
+                    <h2 className="card__title">Death</h2>
+                    <p className="card__apply">
+                        <Bounce top>
+                            <CountUp start={0} end={deaths} delay={3}>
+                                {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
+                            </CountUp>
+                        </Bounce>
+                    </p>
                 </div>
+            </div>
 
-                <div className="card-container">
-                    <div className="card card-4">
-                        <div className="card__icon"><i className="fas fa-bolt"></i></div>
-                        <p className="card__exit"><i className="fas fa-times"></i></p>
-                        <h2 className="card__title">recovered</h2>
-                        <p className="card__apply">
-                            <Bounce top>
-                                <CountUp start={0} end={recovered} delay={3}>
-                                    {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
-                                </CountUp>
-                            </Bounce>
-                        </p>
-                    </div>
+            <div className="card-container">
+                <div className="card card-4">
+                    <div className="card__icon"><i className="fas fa-bolt"></i></div>
+                    <p className="card__exit"><i className="fas fa-times"></i></p>
+                    <h2 className="card__title">recovered</h2>
+                    <p className="card__apply">
+                        <Bounce top>
+                            <CountUp start={0} end={recovered} delay={3}>
+                                {({ countUpRef }) => (<h1> <span ref={countUpRef} /></h1>)}
+                            </CountUp>
+                        </Bounce>
+                    </p>
                 </div>
+            </div>
 
         </>
     )
