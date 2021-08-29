@@ -1,14 +1,20 @@
 import React from 'react'
-import Cards from './components/Cards/Cards'
+// import { Cards, Chart, CountryPicker } from './Components';
 
-
+import Navbar from './Components/Navbar'
+import GridCard from './Components/infoPanel'
 
 
 const App = () => {
   return (
     <div>
-      
-      <Cards />
+      <Navbar />
+      <GridCard />
+
+      {/* <Cards /> */}
+      {/* <CountryPicker />
+      <Chart /> */}
+
     </div>
   )
 }

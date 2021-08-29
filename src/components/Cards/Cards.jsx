@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CountUp from 'react-countup';
-
-import './Cards.css';
 import { Bounce } from 'react-reveal';
 
 
 
-const Cards = () => {
+
+
+export const Cards = () => {
 
     const [totalcases, setTotalCases] = useState([]);
     const [activecases, setActiveCases] = useState([]);
@@ -105,7 +105,5 @@ const Cards = () => {
 
 };
 
+ 
 export default Cards;
-
-
-
