@@ -28,25 +28,17 @@ const [globalData, setGlobalData] = useState({});
  
   useEffect(() => {
     async function getData() {
-      const res = await fetch('https://covid19.mathdro.id/api')
+      const res = await fetch('https://covid2019-api.herokuapp.com/v2/current')
       let data = await res.json();
    
-      delete data.dailySummary;
-      delete data.dailyTimeSeries;
-      delete data.image;
-      delete data.countries;
-      delete data.lastUpdate;
-      delete data.countryDetail;
-      delete data.source;
+      delete data.dt;
+      delete data.ts;
+     
 
-      delete data.confirmed.detail;
-      delete data.deaths.detail;
-      delete data.recovered.detail;
+     console.log(data.data[0]);
 
-     console.log(data);
-
-      setGlobalData(data);
-
+      setGlobalData(data.data);
+console.log(this.data.data)
     }
     getData();
   }, []);
@@ -57,6 +49,7 @@ const [globalData, setGlobalData] = useState({});
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
+       
         {Object.keys(globalData).map((key, ind) => {
           return (
             <Grid item xs={12} sm={4} key={ind}>
@@ -64,7 +57,9 @@ const [globalData, setGlobalData] = useState({});
               elevation={8}>
                 <h2 className={classes.title}>{key}</h2>
                 
-                <h3>{globalData[key].value} </h3>
+                <h3>{globalData[key].deaths} </h3>
+                <h3>{globalData[key].active} </h3>
+                <h3>{globalData[key].recovered} </h3>
 
                  </Paper>
             </Grid>
