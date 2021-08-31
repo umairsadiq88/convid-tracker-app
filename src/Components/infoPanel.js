@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function CenteredGrid() {
+export default function InfoPanel() {
 
 const [globalData, setGlobalData] = useState({});
  
@@ -56,10 +56,8 @@ console.log(this.data.data)
               <Paper className={classes.paper} 
               elevation={8}>
                 <h2 className={classes.title}>{key}</h2>
-                
-                <h3>{globalData[key].deaths} </h3>
-                <h3>{globalData[key].active} </h3>
-                <h3>{globalData[key].recovered} </h3>
+                <h2 className={classes.title}>{globalData[key]}</h2>
+               
 
                  </Paper>
             </Grid>

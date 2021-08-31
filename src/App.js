@@ -1,16 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import { Cards, Chart, CountryPicker } from './Components';
 
 import Navbar from './Components/Navbar'
-import GridCard from './Components/infoPanel'
+import InfoPanel from './Components/InfoPanel'
+import FootNav from './Components/FootNav';
 
 
 const App = () => {
+  const screenConfig = useState(0);
+
   return (
     <div>
-      <Navbar />
-      <GridCard />
 
+      <Navbar />
+      <infoPanel />
+<FootNav />
       {/* <Cards /> */}
       {/* <CountryPicker />
       <Chart /> */}
