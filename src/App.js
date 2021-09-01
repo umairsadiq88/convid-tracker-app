@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 // import { Cards, Chart, CountryPicker } from './Components';
 
 import Navbar from './Components/Navbar'
-import InfoPanel from './Components/InfoPanel'
+import InfoPanel from './Components/infoPanel'
 import FootNav from './Components/FootNav';
 
 
@@ -13,8 +13,9 @@ const App = () => {
     <div>
 
       <Navbar />
-      <infoPanel />
-<FootNav />
+      <InfoPanel currentScreen={screenConfig[0]} />
+      <FootNav screenConfig={screenConfig} />
+
       {/* <Cards /> */}
       {/* <CountryPicker />
       <Chart /> */}

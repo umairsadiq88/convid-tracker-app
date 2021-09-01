@@ -16,15 +16,15 @@ const useStyles = makeStyles({
   },
 });
 
-export default function FootNav() {
+export default function FootNav({screenConfig}) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+
 
   return (
     <BottomNavigation
-      value={value}
+      value={screenConfig[0]}
       onChange={(event, newValue) => {
-        setValue(newValue);
+        screenConfig[1](newValue);
       }}
       showLabels
       className={classes.root}
