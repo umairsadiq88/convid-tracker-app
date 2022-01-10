@@ -34,10 +34,9 @@ export default function GlobalStats() {
             delete api.dt;
             delete api.ts;
 
-
-            setGlobalData(Object.values(api.data));
-            console.log(Object.values(api.data));
-
+             
+            setGlobalData(Object.values(api.data.value));
+            console.log((Object.values(api.data.value)))
         }
         getData();
     }, []);
@@ -55,8 +54,9 @@ export default function GlobalStats() {
                             <Paper className={classes.paper}
                                 elevation={8}>
 
-                                {/* <h2 className={classes.title}>{key} </h2> */}
-                                 {/* <h2 className={classes.title}>{globalData[key]} </h2> */}
+                                {/* <h2 className={classes.title}>{key} </h2>
+                               
+                                 <h2 className={classes.title}>{globalData[key]}</h2> */}
 
                                 
                                 {/* <h2 className={classes.title}>{globalData[0]}</h2> */}
